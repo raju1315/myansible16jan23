@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Install apache httpd
+    apt:
+       name: apache2
+       state: present
+
+  - name: Update repositories cache and install "foo" package
+    apt:
+        name: foo
+        update_cache: yes
